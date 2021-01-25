@@ -80,35 +80,4 @@ Sprawdzanie stanu transakcji
 MT udostępnia jeszcze dwie metody pozwalające wątkowi sprawdzić stan swojej transakcji. Metoda isTransactionActive, wywołana w kontekście wątku, zwraca true wtedy i tylko wtedy, gdy wątek ten ma aktywną transakcję. Metoda isTransactionAborted z kolei zwraca true wtedy i tylko wtedy, gdy wątek ma aktywną transakcję, lecz została ona anulowana.
 Wymagania
 
-Twoim zadaniem jest zaimplementowanie MT według powyższej specyfikacji i dostarczonego szablonu przy wykorzystaniu mechanizmów współbieżności języka Java 11. Musisz zadbać o zapewnienie żywotności i bezpieczeństwa rozwiązania. Staraj się także zmaksymalizować równoległość. W szczególności operacje na różnych zasobach zlecane przez różne wątki powinny wykonywać się równolegle (oczwiście respektując ograniczenia wynikające z powyższej specyfikacji). Twój kod źródłowy powinien być napisany w zgodzie z dobrymi praktykami programistycznymi
-
-Szczegółowe dodatkowe wymagania formalne są następujące.
-
-    Rozwiązanie musi być napisane samodzielnie.
-    Nie możesz w żaden sposób zmieniać zawartości pakietów cp1.base oraz cp1.demo.
-    Klasy implementujące rozwiązanie możesz dodawać jedynie w pakiecie cp1.solution, ale nie możesz tworzyć w tym pakiecie żadnych podpakietów.
-    W klasie cp1.solution.TransactionManagerFactory musisz dodać treść metody newTM, która będzie wykorzystywana do instancjonowania zaimplementowanego przez Ciebie MT. Każde wywołanie tej metody powinno tworzyć nowy obiekt MT. Wiele obiektów MT powinno być w stanie działać w tym samym czasie. Nie wolno natomiast w żaden sposób zmieniać sygnatury tej metody ani nazwy klasy czy jej lokalizacji.
-    Możesz stworzyć sobie własne pakiety do testów, np. cp1.tests, ale te pakiety będą ignorowane przy testowaniu przez nas, więc w szczególności kod Twojego MT nie może od nich zależeć.
-    W plikach źródłowych Javy nie możesz używać nieanglojęzycznych znaków (w szczególności polskich znaków).
-    Twoje rozwiązanie powinno składać się z jednego pliku ab123456.zip, gdzie ab123456 należy zastąpić swoim loginem z maszyny students (będącym zwykle konkatenacją inicjałów i numeru indeksu). Plik ten musi mieć taką samą strukturę, jak szablon, to jest musi zawierać jedynie katalog cp1 reprezentujący pakiet o tej samej nazwie, który zawiera katalogi odpowiednich podpakietów, co najmniej base, demo i solution, które z kolei zawierają odpowiednie pliki źródłowe (*.java).
-    Twoje rozwiązanie musi kompilować się na maszynie students.mimuw.edu.pl poleceniem javac cp1/base/*.java cp1/solution/*.java cp1/demo/*.java.
-    W Twoim rozwiązaniu musi działać program demonstracyjny, wywoływany poleceniem java cp1.demo.Transactions, to jest nie może on zgłaszać żadnych wyjątków.
-
-Rozwiązania niespełniające któregokolwiek z powyższych wymagań nie będą sprawdzane i automatycznie dostaną 0 punktów.
-
-Prosimy o zrozumienie! Będziemy mieli do sprawdzenia nawet blisko 170 rozwiązań. Rozwiązania te będą w pierwszej fazie testowane automatycznie. Gdybyśmy musieli każde rozwiązanie w jakikolwiek sposób poprawiać, aby uruchomienie testów było możliwe, stracilibyśmy niepotrzebnie mnóstwo czasu. Dlatego też zapewnienie zgodności z powyższymi wymaganiami jest po Państwa stronie.
-
-Aby w tym celu dać Państwu więcej informacji co do samej procedury testowania, to dla każdego rozwiązania przebiegać będzie ona z grubsza następująco.
-
-    Archiwum ZIP z rozwiązaniem zostanie rozpakowane do dedykowanego katalogu głównego na maszynie students (lub kompatybilnej jeśli chodzi o wersję Javy).
-    Z katalogu tego zostaną usunięte wszystkie pliki i podkatalogi za wyjątkiem podkatalogu cp1/solution i jego zawartości.
-    Z podkatalogu cp1/solution zostaną usunięte wszystkie pliki (i podkatalogi) za wyjątkiem plików *.java.
-    Do katalogu głównego zostaną skopiowane katalogi cp1/base oraz cp1/demo z dostarczanego szablonu, aby pliki z interfejsami oraz aplikacja demonstracyjna były w wersji oryginalnej, oraz katalogi z kodem naszych testów.
-    Wszystko zostanie skompilowane.
-    Uruchomiona zostanie aplikacja demonstracyjna, aby sprawdzić, czy działa.
-    Jeśli rozpakowanie archiwum, kompilacja lub uruchomienie aplikacji demonstracyjnej się nie powiedzie, to rozwiązanie otrzymuje automatycznie 0 punktów. W przeciwnym przypadku, w ramach testowania, uruchamiane będą kolejne aplikacje testowe oraz ewentualne dodatkowe programy (np. weryfikacja anty-plagiatowa).
-
-Wszelkie pytania i uwagi powinny być kierowane do Konrada Iwanickiego poprzez forum Moodle dedykowane zadaniu. Przed wysłaniem pytania, proszę sprawdzić na forum, czy ktoś wcześniej nie zadał podobnego.
-
-Powodzenia!
-
+Twoim zadaniem jest zaimplementowanie MT według powyższej specyfikacji i dostarczonego szablonu przy wykorzystaniu mechanizmów współbieżności języka Java 11. Musisz zadbać o zapewnienie żywotności i bezpieczeństwa rozwiązania. Staraj się także zmaksymalizować równoległość. W szczególności operacje na różnych zasobach zlecane przez różne wątki powinny wykonywać się równolegle (oczwiście respektując ograniczenia wynikające z powyższej specyfikacji). Twój kod źródłowy powinien być napisany w zgodzie z dobrymi praktykami programistycznymi.
